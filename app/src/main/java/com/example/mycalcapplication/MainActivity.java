@@ -175,7 +175,14 @@ public class MainActivity extends AppCompatActivity {
         backspace.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (!tv.getText().toString().equals("")){
+                    String val = tv.getText().toString();
 
+                    if (val.length()>0){
+                        val = val.substring(0,val.length()-1);
+                        tv.setText(val);
+                    }
+                }
             }
         });
 
